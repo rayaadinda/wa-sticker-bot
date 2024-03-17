@@ -41,17 +41,11 @@ const messageListener = async (message: Message) => {
       stickerAuthor,
     });
 
-    if (!contact.name || !contact.name.endsWith('(DONATUR)'))
-      await message.reply(
-        'Merasa terbantu oleh bot ini? Anda bisa bantu saya dengan donasi melalui link berikut ini\n\nhttps://saweria.co/tfkhdyt\n\nSetelah Anda melakukan donasi, pesan ini akan hilang di request selanjutnya.'
-      );
-
     return;
-  } else if (command.toLowerCase().includes('sticker')) {
+  } else if (['sticker', 'stiker'].some(keyword => command.toLowerCase().includes(keyword))) {
     return message.reply('Gambarnya mana?');
   }
 
-  message.reply('*Command salah*, coba cek kembali command yang Anda kirim');
 };
 
 export default messageListener;

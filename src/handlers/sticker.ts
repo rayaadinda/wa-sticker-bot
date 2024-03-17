@@ -33,8 +33,8 @@ const stickerHandler = async ({
   const { error: replyError } = await goErrorHandler(() =>
     message.reply(media, message.from, {
       sendMediaAsSticker: true,
-      stickerName: stickerName ?? 'TFKHDYT sticker',
-      stickerAuthor: stickerAuthor ?? 'TFKHDYT sticker bot',
+      stickerName: stickerName ?? 'Aray sticker',
+      stickerAuthor: stickerAuthor ?? 'Aray sticker bot',
     })
   );
   if (replyError instanceof Error) {
